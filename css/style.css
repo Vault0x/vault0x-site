@@ -813,12 +813,12 @@ p.signup_no_spam{
 
 .button_back_block{
 	position:absolute;
-	top:20px;
-	right:25px;
+	top:30px;
+	right:15px;
 }
 .button_back {
-	width:34px;
-	height:34px;
+	width:38px;
+	height:38px;
 }
 .button_back .block_button_bg{
 	/*background:transparent;
@@ -992,7 +992,7 @@ p.signup_no_spam{
 	.secspin3{fill:#1A1A1A;}
 	.secspin4{fill:none;stroke:#1A1A1A;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:1.9874,9.9368;}
 	.secspin5{fill:#919191;}
-	.secspin6{font-family:'FoundryGridnik';}
+	.secspin6{font-family:gridnik;}
 	.secspin7{font-size:19.5726px;}
 		
 	.wristband_block{
@@ -1013,6 +1013,9 @@ p.signup_no_spam{
 		
 	}
 	.securityspin_block svg{
+		width:100%;
+	}
+	svg#vault_watch_svg{
 		width:100%;
 	}
 	.wristband_spinner_block{
@@ -1186,6 +1189,7 @@ p.signup_no_spam{
 	body.l-body{
 		font-size:12px;
 	}
+	.button_back_block,
 	.main_menu_link{
 		top:15px;
 	}

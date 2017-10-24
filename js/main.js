@@ -282,6 +282,10 @@ function openVideoHome(){
 	video_block = jQuery(".video_lightbox")
 	video_player_bg = jQuery(".video_lightbox .video_player_bg ")
 	video_player = jQuery(".video_lightbox .the_video")
+	close_button = jQuery(".video_lightbox .button_back_block")
+	TweenMax.killTweensOf(close_button)
+	TweenMax.set(close_button,{autoAlpha:0, scale:0})
+	
 	TweenMax.to(video_block,.2,{autoAlpha:1, ease:Power3.easeOut})
 	TweenMax.set(video_player_bg,{width:0})
 	TweenMax.to(video_player_bg,.6,{width:"100%", ease:Power3.easeOut})
@@ -289,16 +293,22 @@ function openVideoHome(){
 	TweenMax.set(video_player.parent(),{perspective:1200})
 	TweenMax.set(video_player,{scale:.8,top:100,autoAlpha:0, rotationX:-90,transformStyle:"preserve-3d"})
 	TweenMax.to(video_player,.7,{scale:1,autoAlpha:1,top:0,rotationX:0, ease:Power3.easeOut,delay:.3, clearProps:"transform,top,opacity,visibility,scale"})
+	TweenMax.to(close_button,.4,{scale:1,autoAlpha:1, ease:Back.easeOut,delay:.6, clearProps:"transform,opacity,visibility,scale"})
 }
 function closeVideoHome(){
 	video_block = jQuery(".video_lightbox")
 	video_player_bg = jQuery(".video_lightbox .video_player_bg ")
 	video_player = jQuery(".video_lightbox .the_video")
+	close_button = jQuery(".video_lightbox .button_back_block")
+	TweenMax.killTweensOf(close_button)
+	
 	
 	TweenMax.to(video_block,.4,{autoAlpha:0, ease:Power3.easeOut,delay:.3, onComplete:clearVideoPlayerHome })
 	TweenMax.to(video_player_bg,.5,{width:0, ease:Power3.easeOut, delay:.1})
 	
 	TweenMax.to(video_player,.3,{scale:.8,autoAlpha:0, ease:Power3.easeOut})
+	
+	TweenMax.to(close_button,.3,{scale:0,autoAlpha:0, ease:Power3.easeOut})
 }
 function clearVideoPlayerHome(){
 	video_player_iframe = jQuery(".video_lightbox .the_video iframe");
