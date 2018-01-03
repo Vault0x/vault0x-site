@@ -30,7 +30,11 @@
 	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type='text/javascript' src="lib/jquery-migrate.min.js"></script>
 	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js?ver=1.0.0'></script>
+	<script type='text/javascript' src='lib/jquery.mousewheel.min.js'></script>
 	<script type='text/javascript' src='lib/jquery.touchSwipe.min.js'></script>
+	<script type="text/javascript" src="js/common_functions.js"></script>
+	<script type="text/javascript" src="js/fullscreen_sections.js"></script>
+	<script type="text/javascript" src="js/road_map.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
@@ -204,14 +208,76 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 
 
+	<div class="site_portfolio_controls" id="site_portfolio_controls">
+		<div class="site_portfolio_controls_holder" >
+		
+			
+				<div class="nav_main_circle">
+					<div class="nav_main_circle_solid"></div>
+					<div class="dummy_control_steps">
 
+					</div>
+					<div class="portfolio_control_steps" id="portfolio_control_steps">
+						<div class="portfolio_control_step" section_index="0" >
+							<div class="portfolio_control_step_icon"><div class="menu_rect_item"></div></div>
+							<div class="portfolio_control_step_label not_rotated"><div class="portfolio_control_step_label_hitarea"></div>Home</div>								
+						</div>
+						<div class="portfolio_control_step" section_index="1" >
+							<div class="nav_step_content">
+								<div class="portfolio_control_step_icon"><div class="menu_rect_item"></div></div>
+								<div class="portfolio_control_step_label not_rotated"><div class="portfolio_control_step_label_hitarea"></div>What is Vault</div>								
+								<div class="portfolio_control_step_label_alt not_rotated">What is Vault</div>								
+								
+							</div>
+						</div>
+						<div class="portfolio_control_step" section_index="2" >
+							<div class="nav_step_content">
+								<div class="portfolio_control_step_icon"><div class="menu_rect_item"></div></div>
+								<div class="portfolio_control_step_label not_rotated"><div class="portfolio_control_step_label_hitarea"></div>Tokens</div>								
+								<div class="portfolio_control_step_label_alt not_rotated">What is Vault</div>
+							</div>
+						</div>
+					</div>
+
+				
+			
+				<div class="portfolio_controls_hitarea"></div>
+				
+				
+				<a title="Previous Content" href="#prev_content" class="ts_workslide_controll portfolio_control_arrow portfolio_control_arrow_up"><i class="fa fa-angle-up"></i><div class="bg_lines"></div></a>
+				
+				<a title="Next Content" href="#next_content" class="ts_workslide_controll portfolio_control_arrow portfolio_control_arrow_down"><i class="fa fa-angle-down"></i><div class="bg_lines"></div></a>
+
+				<div id="portfolio_control_step_clone" style="display:none;">
+					<div class="portfolio_control_step" section_index="%section_index%" >
+						<div class="nav_step_content">
+							<div class="portfolio_control_step_icon"><div class="menu_rect_item"></div></div>
+							<div class="portfolio_control_step_label not_rotated"><div class="portfolio_control_step_label_hitarea"></div>%name%</div>								
+							<div class="portfolio_control_step_index not_rotated">%section_index_visual%</div>								
+							<div class="portfolio_control_step_label_alt not_rotated">%name%</div>								
+						</div>
+					</div>
+				</div>
+				
+				<div id="dummy_control_step_clone" style="display:none;">
+					<div class="dummy_control_step portfolio_control_step">
+						<div class="portfolio_control_step_icon"><div class="menu_rect_item"></div></div>
+					</div>
+				</div>
+				
+				
+				</div>
+			
+			
+		</div>
+	</div>
 	<div class="l-main">
 	<div class="l-main-h i-cf">
 
 		<main class="l-content" itemprop="mainContentOfPage">
 
 
-			<section class="l-section wpb_row height_full valign_center">
+			<section nav_name="Home" id="home" class="l-section wpb_row height_full valign_center">
 				<div class="vault_sec_bg">
 					<div class="vault_sec_bg_basegradient"></div>
 					<div class="vault_sec_bg_lines">
@@ -237,8 +303,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="l-section-h i-cf"><div class="g-cols type_default valign_middle"><div class="vc_col-sm-12 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper">
 				
-					<div class="wristband_spinner_block">
-							<div class="securityspin_block_holder">
+					<div class="wristband_spinner_block ">
+						<div class="securityspin_block_holder rotate_intro">
 							<div class="securityspin_block">
 								
 								<svg version="1.1" id="securityspin_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -280,267 +346,545 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									</g>
 								</svg>
 							</div>
-							</div>
+						</div><!--securityspin_block_holder-->
 										
-							<div class="wristband_block">
+						<div class="wristband_block rotate_intro">
+							<div class="wristband_proportion_holder">
 							
-							
-<svg version="1.1" id="vault_watch_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="15 0 990.4 220.4" style="enable-background:new 0 0 990.4 220.4;" xml:space="preserve">
-
-
-	<svg id="wristband_left" x="0" y="0"   width="225" height="220.4" viewBox="0 175 225 220.4" >
-
-	<defs>
-		<filter id="Adobe_OpacityMaskFilter1" filterUnits="userSpaceOnUse" x="39" y="179.6" width="175" height="212">
-			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-		</filter>
-	</defs>
-	<mask maskUnits="userSpaceOnUse" x="39" y="179.6" width="175" height="212" id="vleft_12_">
-		<g id="vleft_82_" class="vleft0">
-			
-				<linearGradient id="vleft_3_" gradientUnits="userSpaceOnUse" x1="-175.3191" y1="564.8026" x2="-100.1509" y2="564.8026" gradientTransform="matrix(-1 0 0 1 -47.12 -280.3526)">
-				<stop  offset="0" style="stop-color:#FFFFFF"/>
-				<stop  offset="0.9974" style="stop-color:#000000"/>
-			</linearGradient>
-			<rect id="vleft_83_" x="31.6" y="172.3" class="vleft1" width="178" height="224.3"/>
-		</g>
-	</mask>
-	<g id="vleft_2018_" class="vleft2">
-		<g id="vleft_2938_">
-			<g id="vleft_2942_">
-				<g class="vleft3">
-					<g style="enable-background:new    ;">
-						
-							<image style="overflow:visible;" width="175" height="212" id="vleft_38_" xlink:href="images/watch_shadow_right.png"  transform="matrix(1 0 0 1 39 179.6)">
-						</image>
-					</g>
-				</g>
-				<g id="vleft_29_">
-					
-						<linearGradient id="vleft_4_" gradientUnits="userSpaceOnUse" x1="-239.02" y1="558.7574" x2="-94.62" y2="558.7574" gradientTransform="matrix(-1 0 0 1 -47.12 -280.3526)">
-						<stop  offset="0" style="stop-color:#3B3B3B"/>
-						<stop  offset="1" style="stop-color:#3B3B3B"/>
-					</linearGradient>
-					<path id="vleft_37_" class="vleft4" d="M53.3,196.9l132.2-9.3c3.5-0.2,6.4,3.4,6.4,7.9v165.8c0,4.6-3,8.2-6.5,7.9L53.2,357.1
-						c-3.2-0.3-5.7-3.7-5.7-7.9V204.8C47.5,200.6,50.1,197.1,53.3,196.9z"/>
-				</g>
-			</g>
-			<path id="vleft_2941_" class="vleft5" d="M56.7,201l125.5-8.8c3.3-0.2,6.1,3.2,6.1,7.5v157.4c0,4.4-2.8,7.8-6.2,7.5L56.6,353.1
-				c-3-0.3-5.4-3.5-5.4-7.5V208.5C51.2,204.5,53.6,201.3,56.7,201z"/>
-		</g>
-	</g>
-	</svg>
-
-	
-		
-	<svg id="wristband_center" x="190" y="0px"
-		 viewBox="180 175 661 220.4" >
-
-	<g id="vcenter_2018_">
-		<path id="vcenter_2948_" class="vcent0" d="M584.6,196.1H555c-1,0-1.8-0.8-1.8-1.8v-8.7c0-1,0.8-1.8,1.8-1.8h29.6c1,0,1.8,0.8,1.8,1.8
-			v8.7C586.4,195.3,585.6,196.1,584.6,196.1z"/>
-		<path id="vcenter_2947_" class="vcent0" d="M628.8,196.1h-8.1c-1,0-1.8-0.8-1.8-1.8v-8.7c0-1,0.8-1.8,1.8-1.8h8.1c1,0,1.8,0.8,1.8,1.8
-			v8.7C630.6,195.3,629.8,196.1,628.8,196.1z"/>
-		<g id="vcenter_2932_">
-			<g id="vcenter_2933_">
-				
-					<image style="overflow:visible;opacity:0.5;enable-background:new    ;" width="667" height="215" id="vcenter_23_" xlink:href="images/watch_shadow_center.png"  transform="matrix(0.9982 0 0 0.9982 15 177.8519)">
-				</image>
-				<g id="vcenter_14_">
-					<path id="vcenter_22_" class="vcent1" d="M643.1,370h-604c-8.6,0-15.6-7-15.6-15.6v-152c0-8.6,7-15.6,15.6-15.6h604
-						c8.6,0,15.6,7,15.6,15.6v151.9C658.6,363,651.6,370,643.1,370z"/>
-				</g>
-			</g>
-		</g>
-		
-			<linearGradient id="vcenter_3_" gradientUnits="userSpaceOnUse" x1="31.9231" y1="284.8" x2="650.3231" y2="284.8" gradientTransform="matrix(1 0 0 -1 0 563.2)">
-			<stop  offset="0" style="stop-color:#292929"/>
-			<stop  offset="0.5216" style="stop-color:#393939"/>
-			<stop  offset="1" style="stop-color:#292929"/>
-		</linearGradient>
-		<path id="vcenter_2922_" class="vcent2" d="M638.1,362.3H44c-6.7,0-12.1-5.4-12.1-12.1V206.6c0-6.7,5.4-12.1,12.1-12.1h594.2
-			c6.7,0,12.1,5.4,12.1,12.1v143.6C650.2,356.9,644.8,362.3,638.1,362.3z"/>
-		<path id="vcenter_2921_" class="vcent3" d="M638.1,362.3H44c-6.7,0-12.1-5.4-12.1-12.1V206.6c0-6.7,5.4-12.1,12.1-12.1h594.2
-			c6.7,0,12.1,5.4,12.1,12.1v143.6C650.2,356.9,644.8,362.3,638.1,362.3z"/>
-	</g>
-	</svg>
-
-	<svg id="wristband_right" x="834" y="0"
-		 viewBox="430 175 185 220.4" style="enable-background:new 15 170.6 185 220.4;" xml:space="preserve">
-
-	<defs>
-		<filter id="Adobe_OpacityMaskFilter2" filterUnits="userSpaceOnUse" x="24" y="179.6" width="176" height="212">
-			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-		</filter>
-	</defs>
-	<mask maskUnits="userSpaceOnUse" x="24" y="179.6" width="176" height="212" id="vright_18_">
-		<g id="vright_73_" class="vright0">
-			
-				<linearGradient id="vright_3_" gradientUnits="userSpaceOnUse" x1="-1726.0751" y1="509.1831" x2="-1650.907" y2="509.1831" gradientTransform="matrix(1 0 0 -1 1822.4896 781.6331)">
-				<stop  offset="0" style="stop-color:#FFFFFF"/>
-				<stop  offset="0.9974" style="stop-color:#000000"/>
-			</linearGradient>
-			<rect id="vright_76_" x="15" y="160.3" class="vright1" width="178" height="224.3"/>
-		</g>
-	</mask>
-	<g id="vright_2018_" class="vright2">
-		<g id="vright_2923_">
-			<g id="vright_2927_">
-				<g class="vright3">
-					<g style="enable-background:new    ;">
-						
-							<image style="overflow:visible;" width="176" height="212" id="vright_40_" xlink:href="images/watch_shadow_left.png"  transform="matrix(1 0 0 1 24 179.6)">
-						</image>
-					</g>
-				</g>
-				<g id="vright_33_">
-					
-						<linearGradient id="vright_4_" gradientUnits="userSpaceOnUse" x1="-1789.7897" y1="503.2379" x2="-1645.3896" y2="503.2379" gradientTransform="matrix(1 0 0 -1 1822.4896 781.6331)">
-						<stop  offset="0" style="stop-color:#3B3B3B"/>
-						<stop  offset="1" style="stop-color:#3B3B3B"/>
-					</linearGradient>
-					<path id="vright_39_" class="vright4" d="M171.3,359.9l-132.2,9.3c-3.5,0.2-6.4-3.4-6.4-7.9V195.5c0-4.6,3-8.2,6.5-7.9l132.2,12.1
-						c3.2,0.3,5.7,3.7,5.7,7.9V352C177.1,356.2,174.5,359.7,171.3,359.9z"/>
-				</g>
-			</g>
-			<path id="vright_2926_" class="vright5" d="M168,355.8l-125.6,8.8c-3.3,0.2-6.1-3.2-6.1-7.5V199.7c0-4.4,2.8-7.8,6.2-7.5L168,203.7
-				c3,0.3,5.4,3.5,5.4,7.5v137.1C173.4,352.3,171,355.6,168,355.8z"/>
-		</g>
-
-	</g>
-	
-		<svg id="logo_watch" x="50" y="226" width="28" height="105" >
-		<image style="overflow:visible;" width="28" height="105" xlink:href="images/logo_watch.png"  ></image>
-		</svg>
-
-	</svg>
-	
-	
-	<svg x="285" y="70" width="420" height="100" class="wristband_text_svg">
-	<svg x="0" y="0" width="90" height="100" class="wristband_text_svg">
-		<text class="wristband_text"  text-anchor="middle" x='45' y='50' id="value_days" >20</text>
-		<text class="wristband_text_label"  text-anchor="middle" x='45' y='75' >Days</text>
-	</svg>
-	
-	<svg x="95" y="0" width="90" height="100" class="wristband_text_svg">
-		<text class="wristband_text"  text-anchor="middle" x='45' y='50' id="value_hours" >04</text>
-		<text class="wristband_text_label"  text-anchor="middle" x='45' y='75' >Hours</text>
-	</svg>
-	
-	<svg x="147.5" y="0" width="90" height="100" class="wristband_text_svg">
-		<text class="wristband_text"  text-anchor="middle" x='45' y='50' >:</text>
-		
-	</svg>
-	<svg x="195" y="0" width="90" height="100" class="wristband_text_svg">
-		<text class="wristband_text"  text-anchor="middle" x='45' y='50' id="value_mins">21</text>
-		<text class="wristband_text_label"  text-anchor="middle" x='45' y='75' >Min</text>
-	</svg>
-
-	
-	<svg x="290" y="0" width="90" height="100" class="wristband_text_svg">
-		<text class="wristband_text"  text-anchor="middle" x='45' y='50' id="value_secs">54</text>
-		<text class="wristband_text_label"  text-anchor="middle" x='45' y='75' >Sec</text>
-	</svg>
-	</svg>
-	
-
-	<svg id="lock_icon_svg" x="230px" y="30px" viewBox="0 0 19 24" width="19" height="24" style="enable-background:new 0 0 19 24;" >
-
-		<g id="bql1VE_10_">
-			<g id="XMLID_139_">
-				<path id="XMLID_1154_" class="lock_icon_path" d="M3.3,10.4c0-1.1,0-2.1,0-3.1c0-2.8,1.7-5.1,4.2-5.9c4-1.3,7.9,1.7,8,5.9c0,1,0,2,0,3.1
-					c0.5,0,1,0,1.5,0c0.6,0,0.9,0.2,0.9,0.9c0,3.6,0,7.1,0,10.7c0,0.7-0.2,0.9-0.9,0.9c-5,0-10.1,0-15.1,0c-0.7,0-0.9-0.2-0.9-0.9
-					c0-3.6,0-7.1,0-10.7c0-0.6,0.2-0.9,0.9-0.9C2.3,10.4,2.8,10.4,3.3,10.4z M13.2,10.3c0-1.2,0-2.3,0-3.4c-0.1-1.8-1.5-3.4-3.3-3.5
-					c-1.9-0.2-3.7,1-4,2.9c-0.2,1.3-0.1,2.7-0.2,4C8.3,10.3,10.7,10.3,13.2,10.3z"/>
-			</g>
-		</g>
-	</svg>
-	
-	
-	
-	
-	
-	<svg id="weather_widget" x="700px" y="30px" width="109.59" height="143.4" viewBox="0 0 109.6 143.4" style="enable-background:new 0 0 109.6 143.4;" xml:space="preserve">
-
-		<circle id="wweather_1459_" class="wweather0" cx="25.6" cy="26.3" r="7.2"/>
-		<g id="wweather_1012_">
-			<text id="wweather_59_" transform="matrix(1 0 0 1 34.5988 126.0737)"><tspan x="0" y="0" class="wweather1 wweather2 wweather3">24</tspan><tspan x="34.8" y="0" class="wweather1 wweather2 wweather4">cû</tspan></text>
-		</g>
-		<g id="wweather_1001_">
-			<g id="wweather_11_">
-				<line id="wweather_16_" class="wweather5" x1="4" y1="4.3" x2="4" y2="6.3"/>
-				<line id="wweather_14_" class="wweather6" x1="4" y1="10.2" x2="4" y2="133.9"/>
-				<line id="wweather_13_" class="wweather5" x1="4" y1="135.9" x2="4" y2="137.9"/>
-			</g>
-		</g>
-		<g id="wweather_990_">
-			<path id="wweather_998_" class="wweather1" d="M33.9,67c0-6.6,4.9-10.5,11.5-8c9.8-11.5,27.2-6.7,30.2,7.7c0.3,0.1,0.6,0.2,1,0.3
-				c5.7,1.1,9.6,6,9.2,11.5c-0.4,5.8-4.7,10-10.6,10.5c-0.4,0-0.9,0-1.3,0c-12.2,0-24.4,0-36.6,0c-5.3,0-9.3-2.7-11-7.3
-				c-2-5.3,0.4-11.3,5.5-13.8C32.5,67.6,33.1,67.3,33.9,67z M55.6,85.9c6,0,12,0,18.1,0c0.1,0,0.1,0,0.2,0c2.6,0,5-0.6,6.7-2.6
-				c2.1-2.4,2.7-5.2,1.5-8.2c-1.1-3-3.4-4.7-6.7-5c-2.6-0.3-2.7-0.4-3.1-2.3c-1-6-4.8-10.4-10.3-11.6c-6-1.3-10.8,0.6-14.5,5.5
-				c-1.3,1.8-1.5,1.8-3.4,0.6c-2.3-1.4-4.6-1.2-6.1,0.8c-1,1.3-1.2,2.8-0.7,4.4C38,69,37.7,69.6,36,70c-0.3,0.1-0.6,0.1-0.9,0.1
-				c-4.6,0.9-7.4,5.6-6,10c1.1,3.5,4.1,5.7,8.2,5.7C43.4,85.9,49.5,85.9,55.6,85.9z"/>
-			<path id="wweather_997_" class="wweather1" d="M84.2,53.4c-0.1,3.6-1.7,7.5-4.9,10.6c-0.4,0.4-0.8,0.8-1.2,0.9c-0.6,0.1-1.4,0.1-1.7-0.3
-				c-0.3-0.4-0.4-1.2-0.2-1.8c0.2-0.5,0.8-0.9,1.2-1.3c3.9-4,4.9-9.7,2.5-14.6c-2.3-4.7-7.7-7.7-12.7-7c-5.8,0.7-10,4.5-11.2,10
-				c-0.4,2-1,2.7-2.1,2.5c-1.1-0.3-1.3-1.1-0.9-3.2c1.6-7.7,9.1-13.4,16.8-12.5C78.1,37.6,84.3,44.4,84.2,53.4z"/>
-			<path id="wweather_996_" class="wweather1" d="M90.3,32.3c-0.4,0.6-0.7,1.2-1.1,1.6c-1.7,1.8-3.5,3.5-5.3,5.3c-0.7,0.7-1.6,1.3-2.5,0.4
-				c-1-1-0.5-1.8,0.3-2.6c1.8-1.8,3.6-3.7,5.5-5.4c0.5-0.4,1.3-0.6,2-0.5C89.6,31.1,89.9,31.8,90.3,32.3z"/>
-			<path id="wweather_995_" class="wweather1" d="M82.4,64.8c0.6,0.4,1.1,0.7,1.6,1.1c1.8,1.7,3.5,3.5,5.3,5.3c0.7,0.7,1.2,1.6,0.4,2.5
-				c-0.8,0.9-1.7,0.6-2.5-0.2c-1.9-1.9-3.8-3.7-5.6-5.6c-0.4-0.4-0.6-1.3-0.5-1.9C81.2,65.5,81.9,65.2,82.4,64.8z"/>
-			<path id="wweather_994_" class="wweather1" d="M48.1,30.6c0.6,0.4,1.1,0.6,1.5,0.9c1.8,1.8,3.6,3.6,5.5,5.4c0.7,0.7,1.2,1.6,0.3,2.5
-				c-0.9,0.9-1.7,0.5-2.5-0.3c-1.9-1.9-3.8-3.7-5.6-5.6c-0.4-0.4-0.5-1.3-0.4-2C46.9,31.3,47.6,31,48.1,30.6z"/>
-			<path id="wweather_993_" class="wweather1" d="M69.9,28.2c0,1.4,0,2.8,0,4.2c0,0.9-0.4,1.6-1.4,1.6c-1,0-1.6-0.6-1.6-1.5
-				c-0.1-2.8-0.1-5.7,0-8.5c0-0.9,0.6-1.5,1.6-1.5c1,0,1.4,0.7,1.5,1.6C69.9,25.4,69.9,26.8,69.9,28.2z"/>
-			<path id="wweather_992_" class="wweather1" d="M92.8,51c1.3,0,2.6,0,3.9,0c1,0,1.7,0.4,1.7,1.6c0,1-0.7,1.5-1.6,1.5c-2.8,0.1-5.5,0.1-8.3,0
-				c-0.9,0-1.6-0.5-1.6-1.5c0-1.1,0.7-1.5,1.7-1.6C90,50.9,91.4,51,92.8,51z"/>
-			<path id="wweather_991_" class="wweather1" d="M44.3,51c1.2,0,2.5,0,3.7,0c0.9,0,1.8,0.3,1.8,1.4c0,1.1-0.7,1.6-1.7,1.6
-				c-2.7,0.1-5.4,0.1-8.1,0c-1,0-1.7-0.5-1.7-1.6c0-1.2,0.8-1.5,1.8-1.5C41.5,50.9,42.9,51,44.3,51z"/>
-		</g>
-	</svg>
-
-	
-	
-</svg>
-							
-							
-							
-							
-							
-							
+								<div id="wristband_left" class="wristband_left"></div>
 								
+								<div id="wristband_right" class="wristband_right"></div>
 								
-							</div>
-							
-					</div>		
-							
-							
-							<div class="play_button_block">
-								<div class="play_button block_button">
-									<div class="block_button_bg"></div>
-									<div class="block_button_icon"><i class="fa fa-play" ></i></div>
-								</div>
-								<!--<p class="play_button_label">Play Video</p>-->
-							</div>
-							
-							
+								<div id="wristband_center" class="wristband_center">
+									<div class="wristband_center_button"></div>
+									<div class="wristband_center_mainblock">
+										<div class="wristband_center_innerblock">
+											<div class="wristband_center_bg">
+												<div class="wristband_center_bg_video"></div>
+												<div class="wristband_center_bg_shade"></div>
+												
+											</div>
+											<div class="wristband_center_content">
+												<div class="wristband_countdown">
+												
+													<svg class="wristband_text_svg"
+													 version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+													 viewBox="0 0 390 100" style="enable-background:new 0 0 390 100;" xml:space="preserve">
+														<svg x="0" y="0" width="90" height="100" class="wristband_text_svg">
+															<text class="wristband_text"  text-anchor="middle" x='45' y='50' id="value_days" >20</text>
+															<text class="wristband_text_label"  text-anchor="middle" x='45' y='75' >Days</text>
+														</svg>
+														
+														<svg x="95" y="0" width="90" height="100" class="wristband_text_svg">
+															<text class="wristband_text"  text-anchor="middle" x='45' y='50' id="value_hours" >04</text>
+															<text class="wristband_text_label"  text-anchor="middle" x='45' y='75' >Hours</text>
+														</svg>
+														
+														<svg x="147.5" y="0" width="90" height="100" class="wristband_text_svg">
+															<text class="wristband_text"  text-anchor="middle" x='45' y='50' >:</text>
+															
+														</svg>
+														<svg x="195" y="0" width="90" height="100" class="wristband_text_svg">
+															<text class="wristband_text"  text-anchor="middle" x='45' y='50' id="value_mins">21</text>
+															<text class="wristband_text_label"  text-anchor="middle" x='45' y='75' >Min</text>
+														</svg>
 
-							<div class="home_copy">
-								<div class="home_copy_title_block">
-									<h3>Wearable Hardware Wallet</h3>
-								</div>
-								<div class="home_copy_text_block">
-									<p>
-									Vault0x is a Wearable Hardware Wallet for Cryptocurrencies and other digital assets to keep them highly safe & secure while accessing them on the go.
-									</p>
-								</div>
+														
+														<svg x="290" y="0" width="90" height="100" class="wristband_text_svg">
+															<text class="wristband_text"  text-anchor="middle" x='45' y='50' id="value_secs">54</text>
+															<text class="wristband_text_label"  text-anchor="middle" x='45' y='75' >Sec</text>
+														</svg>
+													</svg>
+												</div>
+												
+												
+												<div class="play_button_block play_button_block_video">
+													<div class="play_button block_button">
+														<div class="block_button_bg"></div>
+														<div class="block_button_icon"><i class="fa fa-play" ></i></div>
+													</div>
+													<p class="play_button_label">Play Video</p>
+												</div>
+												
+												<div class="play_button_block play_button_block_video_alt">
+													<div class="play_button block_button">
+														<div class="block_button_bg"></div>
+														<div class="block_button_icon"><i class="fa fa-play" ></i></div>
+													</div>
+													<p class="play_button_label">Play Video</p>
+												</div>
+												
+												
+												<svg id="lock_icon_svg" viewBox="0 0 19 24" width="19" height="24" style="enable-background:new 0 0 19 24;" >
 
-							</div>
+													<g id="bql1VE_10_">
+														<g id="XMLID_139_">
+															<path id="XMLID_1154_" class="lock_icon_path" d="M3.3,10.4c0-1.1,0-2.1,0-3.1c0-2.8,1.7-5.1,4.2-5.9c4-1.3,7.9,1.7,8,5.9c0,1,0,2,0,3.1
+																c0.5,0,1,0,1.5,0c0.6,0,0.9,0.2,0.9,0.9c0,3.6,0,7.1,0,10.7c0,0.7-0.2,0.9-0.9,0.9c-5,0-10.1,0-15.1,0c-0.7,0-0.9-0.2-0.9-0.9
+																c0-3.6,0-7.1,0-10.7c0-0.6,0.2-0.9,0.9-0.9C2.3,10.4,2.8,10.4,3.3,10.4z M13.2,10.3c0-1.2,0-2.3,0-3.4c-0.1-1.8-1.5-3.4-3.3-3.5
+																c-1.9-0.2-3.7,1-4,2.9c-0.2,1.3-0.1,2.7-0.2,4C8.3,10.3,10.7,10.3,13.2,10.3z"/>
+														</g>
+													</g>
+												</svg>
+												
+												
+												
+											</div>
+
+											
+											
+											
+										</div>
+										
+									</div>
+								</div>
+							
+							</div><!--wristband_proportion_holder-->
+						</div><!--wristband_block-->
+					</div><!--wristband_spinner_block-->
+							
+					<div class="home_copy ">
+						<div class="home_copy_title_block rotate_intro">
+							<h3>World's First Wearable Hardware Wallet for Cryptocurrencies.</h3>
+						</div>
+						<div class="home_copy_text_block rotate_intro">
+							<p>
+							
+							</p>
+						</div>
+
+					</div>
 
 
 
 				</div></div></div></div></div>
 			</section>
+
+			<section  nav_name="What is Vault" id="what_is_vault" class="l-section wpb_row height_full valign_center">
+				<div class="vault_sec_bg">
+					<div class="vault_sec_bg_basegradient vault_sec_bg_basegradient_what"></div>
+					<div class="vault_sec_bg_lines">
+						<div class="vault_sec_bg_lines_holder vault_sec_bg_lines_down">
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+						</div>
+						<div class="vault_sec_bg_lines_holder vault_sec_bg_lines_up">
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="l-section-h i-cf rotate_intro"><div class="g-cols type_default valign_middle"><div class="vc_col-sm-12 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper">
+						<div class="quote_content_block">
+							<h1 class="rotate_intro">What is <br/>Vault0x</h1>
+							<div class="title_sep rotate_intro"><span></span></div>
+							<div  class="rotate_intro">
+								<p>Vault0x is a Wearable Hardware Wallet for Cryptocurrencies and other digital assets to keep them highly safe & secure while accessing them on the go.
+								</p>
+								<p>Vault0x gives you the flexibility to use the device as wallet, watch or 2FA device without worrying about losing it or misplacing it.
+								</p>
+								
+							</div>
+						</div>
+						
+				</div></div></div></div></div>
+			</section>
+			
+			<section  nav_name="Hardware Wallets" id="what_are_hardware_wallets" class="l-section wpb_row height_full valign_center">
+				<div class="vault_sec_bg">
+					<div class="vault_sec_bg_basegradient vault_sec_bg_basegradient_linear"></div>
+					<div class="vault_sec_bg_lines">
+						<div class="vault_sec_bg_lines_holder vault_sec_bg_lines_down">
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+						</div>
+						<div class="vault_sec_bg_lines_holder vault_sec_bg_lines_up">
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+						</div>
+					</div>
+					<div class="vault_bg_floating_items">
+						<div class="bg_floating_image wristband_what_1">
+							<div class="bg_flating_image_inner">
+								<img src="images/wristband_what_1.png" />
+							</div> 
+						</div> 
+						<div class="bg_floating_image wristband_what_2">
+							<div class="bg_flating_image_inner">
+								<img src="images/wristband_what_2.png" />
+							</div> 
+						</div> 
+					</div> 
+				</div>
+				
+				<div class="l-section-h i-cf"><div class="g-cols type_default valign_middle"><div class="vc_col-sm-12 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper">
+						<div class="quote_content_block">
+						
+							<h1 class="rotate_intro">What are  <br/>Hardware Wallets</h1>
+							<div class="title_sep rotate_intro"><span></span></div>
+							<div  class="rotate_intro">
+								<p>
+								Hardware wallets are the safest way to store cryptocurrencies without getting hacked or phished.
+								</p>
+								<p>
+								Hardware wallet can generate new accounts while offline and never expose their private key to outside world. They cannot be monitored or controlled by any exchange or government. With hardware wallet you are the only one with access to your cryptos. They can also be used for storing other digital assets and carrying of 2FA authentication.
+								</p>
+							</div>
+						</div>
+				</div></div></div></div></div>
+			</section>
+			
+			
+			
+			<section  nav_name="Why Vault" id="why_vault" class="l-section wpb_row height_full valign_center">
+				<div class="vault_sec_bg">
+					<div class="vault_sec_bg_basegradient vault_sec_bg_basegradient_linear"></div>
+					<div class="vault_sec_bg_lines">
+						<div class="vault_sec_bg_lines_holder vault_sec_bg_lines_down">
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+						</div>
+						<div class="vault_sec_bg_lines_holder vault_sec_bg_lines_up">
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+							<div class="vault_sec_bg_line"><div class="vault_sec_bg_line_innercolor"></div></div>
+						</div>
+					</div>
+					<div class="vault_bg_floating_items">
+						<div class="bg_floating_image wristband_why_1">
+							<div class="bg_flating_image_inner">
+								<img src="images/wristband_why_1.png" />
+							</div> 
+						</div> 
+						<div class="bg_floating_image wristband_why_2">
+							<div class="bg_flating_image_inner">
+								<img src="images/wristband_why_2.png" />
+							</div> 
+						</div> 
+					</div> 
+				</div>
+				
+				<div class="l-section-h i-cf"><div class="g-cols type_default valign_middle"><div class="vc_col-sm-12 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper">
+						<div class="vertical_scrolling_content">
+							<ul class="vertical_scrolling_content_list rotate_intro">
+								<li nav_title="Intro">
+									<div class="quote_content_block why_content_block">
+										<h1>Why <br/>Vault0x</h1>
+										<div class="title_sep"><span></span></div>
+										<p>
+										Security, ownership, convenience, elegant & sexy are some of the reasons to own Vault0x HD wallet. This gives you the complete control of your cryptocurrencies while keeping them safe & secure.
+										</p>
+									</div>
+								</li>
+								<li nav_title="Multiporpuse">
+									<div class="quote_content_block why_content_block">
+										<h1>Multi<br/>porpuse</h1>
+										<div class="title_sep"><span></span></div>
+										<p>
+										Vault0x not just a crypto wallet but also the holder of 2-Factor Authentication features which makes your life easier.
+										</p>
+									</div>
+								</li>
+								<li nav_title="Artistic/Elegant">
+									<div class="quote_content_block why_content_block">
+										<h1>Artistic/<br/>Elegant</h1>
+										<div class="title_sep"><span></span></div>
+										<p>
+										Carry the digital currencies in a beautiful wearable watch & look awesome.
+										</p>
+									</div>
+								</li>
+								<li nav_title="Multicurrency">
+									<div class="quote_content_block why_content_block">
+										<h1>Multi<br/>currency</h1>
+										<div class="title_sep"><span></span></div>
+										<p>
+										Bitcoin, Ether, ERC20 tokens, EOS tokens, Neo & many other cryptocurrencies at a single HD wallet.
+										</p>
+									</div>
+								</li>
+								<li nav_title="Convenience">
+									<div class="quote_content_block why_content_block">
+										<h1>Conve<br/>nience</h1>
+										<div class="title_sep"><span></span></div>
+										<p>
+										Keep the digital assets with full convenience. Never feel like carrying extra devices on the go.
+										</p>
+									</div>
+								</li>
+								<li nav_title="Recoverable">
+									<div class="quote_content_block why_content_block">
+										<h1>Recove<br/>rable</h1>
+										<div class="title_sep"><span></span></div>
+										<p>
+										Recover your assets using the seed words instantly in-case you lose them at anytime.
+										</p>
+									</div>
+								</li>
+								<li nav_title="Security">
+									<div class="quote_content_block why_content_block">
+										<h1>Secu<br/>rity</h1>
+										<div class="title_sep"><span></span></div>
+										<p>
+										Highly Secure Cold Storage of your cyrptocurrencies if you are looking for short term of long term investment.
+										</p>
+									</div>
+								</li>
+							</ul>
+							<div class="vert_nav rotate_intro">
+								<div class="vert_nav_arrows">
+									<div class="arrowcontrol arrowcontrol_left"><div class="arrowcontrol_arrow" ></div></div>
+									<div class="arrowcontrol arrowcontrol_right"><div class="arrowcontrol_arrow" ></div></div>
+									
+								</div>
+								<div class="vert_nav_vline"></div>
+								<div class="vert_nav_items">
+									<div class="vert_nav_item current_item">
+										<div class="vert_nav_line"><div class="vert_inner_line"></div> </div> 
+										<div class="vert_nav_number">0</div> 
+										<div class="vert_nav_label">Intro</div> 
+									</div>
+									
+								</div>
+								
+								<div class="vert_nav_item_clone" style="display:none;">
+									<div class="vert_nav_item">
+										<div class="vert_nav_line"><div class="vert_inner_line"></div></div> 
+										<div class="vert_nav_number">%number%</div> 
+										<div class="vert_nav_label">%name%</div> 
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						
+						
+						
+				</div></div></div></div></div>
+			</section>
+			
+			
+			
+			
+			
+			<section nav_name="Road Map" id="road_map" class="l-section wpb_row height_full width_full valign_center with_video">
+				<div class="l-section-video">
+					<div class="video_placeholder" style="background-image:url('videos/vid_1.jpg');" ></div>
+					<div class="video_fallback" data_video-fallback="videos/vid_1.gif" ></div>
+					<video muted loop autoplay preload="auto" webkit-playsinline="true" playsinline="true"  >
+					</video>
+					<div class="video_source_dynamicload">
+						<source type="video/mp4" src="videos/road_map.mp4" />
+					</div>
+				</div>
+
+				<div class="background_block">
+
+				</div>
+
+				<div class="l-section-h i-cf"><div class="g-cols type_default valign_middle"><div class="vc_col-sm-12 wpb_column vc_column_container"><div class="vc_column-inner"><div class="wpb_wrapper">
+					<div class="roadmap_block">
+						<div class="roadmap_arrowcontrols">
+							<div class="arrowcontrol arrowcontrol_right"><div class="arrowcontrol_arrow" ></div></div>
+							<div class="arrowcontrol arrowcontrol_left"><div class="arrowcontrol_arrow" ></div></div>
+						</div>
+						<div class="roadmap_list_maskblock" >
+						<div class="roadmap_list_holder" >
+
+							<ul class="roadmap_list" >
+								<li>
+									<div class="roadmap_item sequenced_fadein">
+											
+											<div class="roadmap_copy road_map_title">
+												<h2 class="rotate_intro" >Road<br>Map</h2>
+												<div class="title_sep rotate_intro"><span></span></div>
+											</div>
+											<div class="roadmap_lines">
+												<div class="roadmap_topnumber">
+													<div class="number_icon">
+														<div class="number_icon_bg"></div>
+														<div class="number_icon_label"></div>
+													</div>
+												</div>
+												<div class="roadmap_vline-h">
+													<div class="roadmap_vline">
+														
+														<div class="roadmap_linedot"></div>
+													</div>
+												</div>
+												<div class="roadmap_hline">
+													<div class="line_color_fill"></div>
+												</div>
+												<div class="roadmap_vline roadmap_vline_clone"></div>
+											</div>
+											<div class="roadmap_copy_clonespacer">
+											</div>
+											<div class="roadmap_whiteseparator"></div>
+									</div>
+								</li>
+								<li>
+									<div class="roadmap_item sequenced_fadein">
+											
+											<div class="roadmap_copy">
+												<p>Release Vault0x Software wallet.
+												</p>
+											</div>
+											<div class="roadmap_lines">
+												<div class="roadmap_topnumber">
+													<div class="number_icon">
+														<div class="number_icon_bg"></div>
+														<div class="number_icon_label">0</div>
+													</div>
+												</div>
+												<div class="roadmap_vline-h">
+													
+													<div class="roadmap_vline">
+														<div class="line_color_fill"></div>
+														<div class="roadmap_linedot"></div>
+													</div>
+												</div>
+												<div class="roadmap_hline">
+													<div class="line_color_fill"></div>
+												</div>
+												<div class="roadmap_vline roadmap_vline_clone"></div>
+											</div>
+											<div class="roadmap_copy_clonespacer">
+											</div>
+											<div class="roadmap_whiteseparator"></div>
+									</div>
+								</li>
+								<li>
+									<div class="roadmap_item sequenced_fadein">
+											
+											<div class="roadmap_copy">
+												<p>Release of closed Beta to key contributors, Supporters & Influentials.
+												</p>
+											</div>
+											<div class="roadmap_lines">
+												<div class="roadmap_topnumber">
+													<div class="number_icon">
+														<div class="number_icon_bg"></div>
+														<div class="number_icon_label">1</div>
+													</div>
+												</div>
+												<div class="roadmap_vline-h">
+													<div class="roadmap_vline">
+														<div class="line_color_fill"></div>
+														<div class="roadmap_linedot"></div>
+													</div>
+												</div>
+												<div class="roadmap_hline">
+													<div class="line_color_fill"></div>
+												</div>
+												<div class="roadmap_vline roadmap_vline_clone"></div>
+											</div>
+											<div class="roadmap_copy_clonespacer">
+											</div>
+											<div class="roadmap_whiteseparator"></div>
+									</div>
+								</li>
+								<li>
+									<div class="roadmap_item sequenced_fadein">
+											<div class="roadmap_copy">
+												<p>Release of Public Beta of the Vault0x HD & Software wallet for anyone to buy.</p>
+											</div>
+											<div class="roadmap_lines">
+												<div class="roadmap_topnumber">
+													<div class="number_icon">
+														<div class="number_icon_bg"></div>
+														<div class="number_icon_label">2</div>
+													</div>
+												</div>
+
+												<div class="roadmap_vline-h">
+													<div class="roadmap_vline">
+														<div class="line_color_fill"></div>
+														<div class="roadmap_linedot"></div>
+													</div>
+												</div>
+												<div class="roadmap_hline">
+													<div class="line_color_fill"></div>
+												</div>
+												<div class="roadmap_vline roadmap_vline_clone"></div>
+											</div>
+											<div class="roadmap_copy_clonespacer">
+											</div>
+											<div class="roadmap_whiteseparator"></div>
+									</div>
+								</li>
+								<li>
+									<div class="roadmap_item sequenced_fadein">
+											
+											<div class="roadmap_copy">
+												<p>Public release of 2FA in the wearable watch.</p>
+											</div>
+											<div class="roadmap_lines">
+												<div class="roadmap_topnumber">
+													<div class="number_icon">
+														<div class="number_icon_bg"></div>
+														<div class="number_icon_label">3</div>
+													</div>
+												</div>
+												<div class="roadmap_vline-h">
+													<div class="roadmap_vline">
+														<div class="line_color_fill"></div>
+														<div class="roadmap_linedot"></div>
+													</div>
+												</div>
+												<div class="roadmap_hline">
+													<div class="line_color_fill"></div>
+												</div>
+												<div class="roadmap_vline roadmap_vline_clone"></div>
+											</div>
+											<div class="roadmap_copy_clonespacer">
+											</div>
+											<div class="roadmap_whiteseparator"></div>
+									</div>
+								</li>
+								
+
+
+							</ul>
+						</div>
+						</div>
+
+
+
+					</div>
+
+				</div></div></div></div></div>
+			</section>
+
 
 
 		</main>
