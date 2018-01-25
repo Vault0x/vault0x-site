@@ -1458,7 +1458,7 @@ portfolio_control_step
 .nav_main_circle_solid{
 	width:100%;
 	height:100%;
-	background:url(../images/texture_bg.png) repeat right center #1a1a1a;
+	background:url(../images/texture_bg.png) repeat right center #1c1c1c;
 	position:absolute;
 	left:0;
 	top:0;
@@ -2090,7 +2090,7 @@ ROAD MAP
 	
 @media (max-width: 1500px) {
 	.l-section-h{
-		max-width:1150px;
+		max-width:1000px;
 	}
 	.wristband_block{
 		max-width:800px;
@@ -2100,6 +2100,29 @@ ROAD MAP
 		height: 500px;
 		margin-left: -250px;
 		margin-top: -255px;
+	}
+	
+	.quote_content_block h1 {
+		font-size: 42px;
+	}
+	.quote_content_block {
+		font-size: 15px;
+	}
+	.road_map_title h2{
+		font-size: 40px;
+	}
+	
+	
+	
+	.vert_nav_item {
+		font-size: 16px;
+		padding: 5px 0;
+		margin: 0 0 15px;
+	}
+	
+	
+	.number_icon_label{
+		font-size:50px;
 	}
 
 }
@@ -2147,19 +2170,53 @@ ROAD MAP
 		margin-left:-913px;
 	}
 	
+	
+	
+	.wristband_proportion_holder {
+		width: 352px;
+		height: 208px;
+		
+	}
+	.wristband_center_content .play_button_block_video .play_button_label {
+		font-size: 12px;
+	}
+	
+	.site_portfolio_controls{
+		top:-12%;
+	}
+	
+	
+	
+	.roadmap_item{
+		padding:50px 0;
+	}
+	
 }
 
 @media (max-width: 1200px) {
-
-	.vyral_logo{
-		margin-left:0px;
+	.l-section-h {
+		max-width: 700px;
 	}
-
-	.column_content_left{
-		padding-right:32px;
+	.wristband_what_1{
+		width:30%;
 	}
-	.column_content_middle {
-		width: 64px;
+	.wristband_what_2{
+		width:60%;
+	}
+	
+	.wristband_why_2 {
+		width: 28%;
+	}
+	.wristband_why_1 {
+		width: 20%;
+	}
+	
+	
+	.title_sep {
+    margin: .5em 0;
+	}
+	.road_map_title .title_sep{
+		margin-top:10px;
 	}
 }
 .column_content_left .play_button_block{
@@ -2175,8 +2232,27 @@ ROAD MAP
 		max-width: 500px;
 		
 	}
+	.site_portfolio_controls {
+		top: 5%;
+	}
+	.l-section-h {
+		max-width: 450px;
+	}
+	.vertical_scrolling_content_list{
+		min-width:280px;
+	}
+	.vert_nav_item {
+		font-size: 14px;
+		padding: 5px 0;
+		margin: 0 0 7px;
+	}
 }
 @media (max-width: 767px) {
+	
+	.l-section-h {
+		max-width: 260px;
+	}
+	
 	.main_logo{
 		max-width:100px;
 	}
@@ -2188,7 +2264,7 @@ ROAD MAP
 	}
 	ul.main_nav_list{
 		font-size: 18px;
-		
+		margin-left: 70px;
 	}
 
 	.wristband_spinner_block{
@@ -2234,12 +2310,12 @@ ROAD MAP
 		margin-bottom:20px;
 	}
 	.block_button {
-		line-height: 40px;
-		width: 40px;
-		height: 40px;
+		line-height: 30px;
+		width: 30px;
+		height: 30px;
 	}
 	.block_button_icon{
-		font-size:15px;
+		font-size:12px;
 	}
 	.home_copy{
 		margin-top:0;
@@ -2254,6 +2330,106 @@ ROAD MAP
 	.main_menu_link{
 		top:15px;
 	}
+	
+	
+	.wristband_proportion_holder {
+		width: 220px;
+		height: 130px;
+	}
+	
+	
+
+	.wristband_center_content .play_button_block_video_alt .block_button {
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+	}
+	.wristband_center_content .play_button_block_video_alt .play_button_label {
+		font-size: 10px;
+	}
+	.wristband_center_content .play_button_block_video_alt .block_button_icon {
+		font-size: 9px;
+	}
+	.play_button {
+		margin-bottom: 3px;
+	}
+	#lock_icon_svg {
+		width: 10px;
+	}
+	
+	.site_portfolio_controls.opened .nav_main_circle {
+		margin-left: -1230px;
+		
+	}
+	.site_portfolio_controls.opened .portfolio_control_step.current .menu_rect_item {
+		margin-left: -3px;
+	}
+
+	.portfolio_control_step.current .portfolio_control_step_label_alt {
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	
+	.our_team_title h2 {
+		font-size: 25px;
+	}
+	
+	
+	
+	
+	.roadmap_item {
+		width: 150px;
+		
+	}
+	.roadmap_copy p {
+		font-size: 11px;
+	}
+	.number_icon_label {
+		font-size: 35px;
+	}
+	
+	
+	
+	
+	
+	
+	.vertical_scrolling_content_list {
+		min-width: 180px;
+	}
+	.vert_nav {
+		padding: 0;
+		margin-left: 50px;
+	}
+	.vert_nav_arrows{
+		margin-left:0;
+	}
+	.vert_nav_items,
+	.vert_nav_vline{
+		display:none;
+	}
+	.quote_content_block h1 {
+		font-size: 25px;
+	}
+	.road_map_title h2 {
+		font-size: 35px;
+	}
+	.wristband_what_1 {
+		width: 50%;
+		right: 0%;
+	}
+	.wristband_what_2 {
+		width: 80%;
+		right: 0;
+	}
+	.wristband_why_1 {
+		width: 50%;
+	}
+	.wristband_why_2 {
+		width: 60%;
+	}
+	
+	
 }
 
 
